@@ -1,5 +1,4 @@
 # Installing DNS in Debian 10
----
 
 ## Downloading the image
 
@@ -62,12 +61,12 @@ systemctl reload apparmor
 ```
 ---
 
-**Note**: If you do not plan to use ipv6 in the DNS, it is a good idea to initialize the named daemon with ipv4 support only:
+**Note**: If you do not plan to use ipv6 in the DNS, it is a good idea to initialize the named daemon with ipv4 (**-4**) support only:
 
 ```
 /etc/default/bind9
 
-OPTIONS="**-4** -u bind"
+OPTIONS="-4 -u bind"
 ```
 
 
