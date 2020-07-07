@@ -4,6 +4,16 @@ Basic DNS Notes Repository
 
 Notes about settings and tuning used in the DNS system presented in my tech talk "**DNS101: Nothing is what it seems**"
 
+### DNS Installation
+
+- [DNS Master](https://github.com/rootzilopochtli/dns101/blob/master/DebianInstall.md)
+- DNS Slave
+
+### DNS Config Files
+
+- [Master](https://github.com/rootzilopochtli/dns101/tree/master/master)
+- Slave
+
 ## Author Information
 
 This notes was updated in 2020 by [Alex Callejas](https://www.twitter.com/dark_axl), blog [rootzilopochtli.com](https://www.rootzilopochtli.com/).
