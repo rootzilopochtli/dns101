@@ -69,6 +69,23 @@ systemctl reload apparmor
 OPTIONS="-4 -u bind"
 ```
 
+---
+
+### DNS Master Config Files
+
+- The different [example files](https://github.com/rootzilopochtli/dns101/tree/master/master) of the **DNS Master directory** are used.
+
+### Creating rndc key
+
+```
+rndc-confgen -a -b 512 -c /etc/bind/rndc.key
+```
+
+### Creating TSIG key
+
+```
+dnssec-keygen -a HMAC-MD5 -b 512 -n HOST dns1-dns2.ejemplo.lab.
+```
 
 ## References
 
