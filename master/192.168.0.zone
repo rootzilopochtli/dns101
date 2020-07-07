@@ -1,0 +1,16 @@
+$ORIGIN .
+$TTL 1d
+0.168.192.in-addr.arpa  IN      SOA     dns1.ejemplo.lab. root.dns1.ejemplo.lab. (
+                                2020062901 ; numero de serie
+                                1200       ; refresh (20 minutos)
+                                3600       ; retry (1 hora)
+                                1209600    ; expire (2 semanas)
+                                3600       ; minimum (1 hora)
+                                ) 
+                        NS dns1.ejemplo.lab.
+                        NS dns2.ejemplo.lab.
+$ORIGIN 0.168.192.in-addr.arpa.
+1                       PTR       ejemplo.lab.
+2                       PTR       dns1.ejemplo.lab.
+3                       PTR       dns2.ejemplo.lab.
+4                       PTR       mail.ejemplo.lab.

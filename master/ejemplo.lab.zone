@@ -1,0 +1,19 @@
+$ORIGIN .
+$TTL 1d
+ejemplo.lab     IN      SOA     dns1.ejemplo.lab. root.dns1.ejemplo.lab. (
+                                2020070301 ; numero de serie
+                                1200       ; refresh (20 minutos)
+                                3600       ; retry (1 hora)
+                                1209600    ; expire (2 semanas)
+                                3600       ; minimum (1 hora)
+                                ) 
+                        A  192.168.0.1
+                        NS dns1.ejemplo.lab.
+                        NS dns2.ejemplo.lab.
+                        MX 10 mail.ejemplo.lab.
+$ORIGIN ejemplo.lab.
+dns1                    A       192.168.0.2
+dns2                    A       192.168.0.3
+mail                    A       192.168.0.4
+www                     CNAME   ejemplo.lab.
+portal                  CNAME   ejemplo.lab.

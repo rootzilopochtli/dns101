@@ -1,0 +1,41 @@
+acl "red_interna" { 192.168.122.0/24; };
+
+options {
+ directory "/var/named/zones";
+ pid-file "/var/run/named.pid";
+ allow-transfer { none; };
+ allow-query { localnets; };
+ version "Oculta deliberadamente";
+ allow-recursion { "red_interna"; };
+ recursive-clients 200;
+};
+
+logging {
+  channel archivo {
+     file "named.log" versions 9 size 10M;
+     print-time yes;
+     print-category yes;
+     print-severity yes;
+  };
+  category default{ archivo; default_syslog; }; 
+};
+
+zone "." {
+ type hint;
+ file "named.root";
+};
+
+zone "0.0.127.in-addr.arpa" {
+ type master;
+ file "127.0.0.zone";
+};
+
+zone "ejemplo.lab" {
+ type master;
+ file "ejemplo.lab.zone";
+};
+
+zone "0.168.192.in-addr.arpa" {
+ type master;
+ file "192.168.0.zone";
+};
