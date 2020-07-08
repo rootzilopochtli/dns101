@@ -79,6 +79,10 @@ OPTIONS="-4 -u bind"
 
 ```
 rndc-confgen -a -b 512 -c /etc/bind/rndc.key
+
+cat /etc/bind/rndc.key > /etc/bind/rndc.conf
+
+rm -rf /etc/bind/rndc.key
 ```
 
 ### Creating TSIG key
