@@ -7,7 +7,7 @@ Notes about settings and tuning used in the DNS system presented in my tech talk
 ### DNS Installation
 
 - [DNS Master](https://github.com/rootzilopochtli/dns101/blob/master/DebianInstall.md)
-- DNS Slave
+- [DNS Slave](https://github.com/rootzilopochtli/dns101/blob/master/CentOSInstall.md)
 
 ### DNS Config Files
 
