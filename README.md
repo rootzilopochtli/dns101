@@ -12,7 +12,7 @@ Notes about settings and tuning used in the DNS system presented in my tech talk
 ### DNS Config Files
 
 - [Master](https://github.com/rootzilopochtli/dns101/tree/master/master)
-- Slave
+- [Slave](https://github.com/rootzilopochtli/dns101/tree/master/slave)
 
 ## Author Information
 
