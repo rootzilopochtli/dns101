@@ -1,0 +1,51 @@
+acl "red_interna" { 192.168.122.0/24; };
+
+options {
+ directory "/var/named/zones/slave";
+ version "Oculta deliberadamente";
+ allow-transfer { none; };
+ allow-query { localnets; };
+ allow-recursion { "red_interna"; };
+ recursive-clients 200;
+};
+
+controls {
+  inet 127.0.0.1 port 953 allow { localhost; } keys { "rndc-key"; };
+};
+
+key "rndc-key" {
+    	algorithm hmac-md5;
+	secret "QzrWJjAIFBDymvXdlMzIA3jHhZcUv4nM89VF3dTVC/Tj56Y5pumpsXE10yN5j/uFDUM2Xt/O3neBtTUd754kwg==";
+};
+
+logging {
+  channel archivo {
+     file "named.log" versions 9 size 10M;
+     print-time yes;
+     print-category yes;
+     print-severity yes;
+  };
+  category default{ archivo; default_syslog; }; 
+};
+
+zone "." {
+ type hint;
+ file "named.root";
+};
+
+zone "0.0.127.in-addr.arpa" {
+ type master;
+ file "127.0.0.zone";
+};
+
+zone "ejemplo.lab" {
+ type slave;
+ file "ejemplo.lab.zone.slave";
+ masters { 192.168.122.208; };
+};
+
+zone "0.168.192.in-addr.arpa" {
+ type slave;
+ file "192.168.0.zone.slave";
+ masters { 192.168.122.208; };
+};
