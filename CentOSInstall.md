@@ -66,7 +66,8 @@ restorecon -vR /var/named/zones
 
 ### DNS Slave Config Files
 
-- TODO
+- Use the different [example files](https://github.com/rootzilopochtli/dns101/tree/master/slave) from the **DNS Slave directory**.
+
 
 ### Create rndc config file
 
@@ -78,6 +79,15 @@ cat /etc/rndc.key > /etc/rndc.conf
 rm -rf /etc/rndc.key
 ```
 
+---
+
+### Zone Transfer
+
+```
+rm -rf /var/named/zones/slave/*.slave
+
+systemctl restart named
+```
 
 ## References
 
